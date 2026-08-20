@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent",
+  "type": "object",
+  "required": ["id", "name", "version", "model", "tools", "rag_enabled", "memory"],
+  "properties": {
+    "id":              { "type": "string" },
+    "name":            { "type": "string" },
+    "version":         { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "model":           { "type": "string" },
+    "instructions_ref":{ "type": "string" },
+    "tools":           { "type": "array", "items": { "type": "string" } },
+    "rag_enabled":     { "type": "boolean" },
+    "memory":          { "type": "string", "enum": ["session", "none"] }
+  }
+}

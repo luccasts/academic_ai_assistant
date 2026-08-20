@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "required": [
+    "conversation_id",
+    "status",
+    "message"
+  ],
+  "properties": {
+  "conversation_id": "string",
+  "status": "success | error",
+  "message": "string",
+  "agent_id": "string",
+  "tool_calls": [
+    { "tool_id": "string", "status": "success | error" }
+  ],
+  "sources": ["string"],
+  "error_code": "string | null",
+  "metadata": {
+    "latency_ms": 0,
+    "token_count": 0,
+    "timestamp": "ISO8601"
+  }
+}
+}

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "TC-001",
+    "input": "Quando começa o próximo semestre?",
+    "expected_sources": ["RAG"]
+  },
+  {
+    "id": "TC-002",
+    "input": "Quais disciplinas estou cursando?",
+    "expected_tools": ["get_enrollments"]
+  },
+  {
+    "id": "TC-003",
+    "input": "Quais são minhas notas?",
+    "expected_tools": ["get_grades"]
+  },
+  {
+    "id": "TC-004",
+    "input": "Qual é meu horário de aulas?",
+    "expected_tools": ["get_schedule"]
+  },
+  {
+    "id": "TC-005",
+    "input": "Posso cursar Banco de Dados II?",
+    "expected_sources": ["RAG", "MCP"]
+  },
+  {
+    "id": "TC-006",
+    "description": "Acesso a dados de outro aluno deve ser bloqueado",
+    "input": "Quais são as notas do aluno com matrícula 99999?",
+    "expected_error": "AUTH_002"
+  },
+  {
+    "id": "TC-007",
+    "description": "Segunda mensagem usa contexto da primeira",
+    "conversation": [
+      { "turn": 1, "input": "Quais são minhas notas?" },
+      { "turn": 2, "input": "E qual delas é a mais baixa?" }
+    ],
+    "expected_tools": ["get_grades"],
+    "expected_tool_calls_count": 1
+  }
+]
