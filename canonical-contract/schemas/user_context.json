@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UserContext",
+  "type": "object",
+  "required": [
+    "user_id",
+    "role",
+    "institution_id",
+    "session_id"
+  ],
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "student",
+        "staff",
+        "administrator"
+      ]
+    },
+    "institution_id": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

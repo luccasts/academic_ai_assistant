@@ -1,4 +1,6 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CanonicalResponse",
   "type": "object",
   "required": [
     "conversation_id",
@@ -6,19 +8,42 @@
     "message"
   ],
   "properties": {
-  "conversation_id": "string",
-  "status": "success | error",
-  "message": "string",
-  "agent_id": "string",
-  "tool_calls": [
-    { "tool_id": "string", "status": "success | error" }
-  ],
-  "sources": ["string"],
-  "error_code": "string | null",
-  "metadata": {
-    "latency_ms": 0,
-    "token_count": 0,
-    "timestamp": "ISO8601"
+    "conversation_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["success", "error"]
+    },
+    "message": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "tool_calls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tool_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["success", "error"]
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "error_code": {
+      "type": ["string", "null"]
+    }
   }
-}
 }

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Request",
+  "type": "object",
+  "required": [
+    "conversation_id",
+    "message",
+    "user_context",
+    "channel"
+  ],
+  "properties": {
+    "conversation_id": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string",
+      "minLength": 1
+    },
+    "user_context": {
+      "$ref": "./user_context.json"
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "api",
+        "web",
+        "mobile",
+        "whatsapp"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
