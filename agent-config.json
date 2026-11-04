@@ -3,8 +3,8 @@
   "name": "Academic AI Assistant",
   "version": "1.0.0",
   "model": "gemini-2.0-flash",
-  "instructions_ref": "../../canonical-contract/agent.md",
-  "tools": ["get_student_profile", "get_enrollments", "get_grades", "get_schedule"],
+  "instructions_ref": "canonical-contract/agent.md",
+  "tools": ["search_institutional_knowledge", "get_student_profile", "get_enrollments", "get_grades", "get_schedule"],
   "rag_enabled": true,
   "memory": "session"
 }
